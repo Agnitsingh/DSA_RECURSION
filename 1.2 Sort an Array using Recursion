@@ -1,0 +1,38 @@
+class Solution {
+public:
+
+    void insert(vector<int> &arr, int val)
+    {
+        if(arr.size() == 0 || arr[arr.size()-1]<=val)
+        {
+            arr.push_back(val);
+            return;
+        }
+
+        int temp = arr.back();
+        arr.pop_back();
+        insert(arr,val);
+        arr.push_back(temp);
+        return;
+    }
+
+    void sort(vector<int> &arr)
+    {
+        if(arr.size() == 1)
+        {
+            return;
+        }
+
+        int n = arr.size();
+        int val = arr[n-1];
+        arr.pop_back();
+        sort(arr);
+        insert(arr,val);
+        return;
+    }
+
+    vector<int> sortArray(vector<int>& nums) {
+        sort(nums);
+        return nums;
+    }
+};
