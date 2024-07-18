@@ -29,3 +29,15 @@ int main() {
   cout<<endl<<count;
   return 0;
 }
+
+// OUTPUT
+/*
+Moving disc 1 from 1 to 3 with help of 2
+Moving disc 2 from 1 to 2 with help of 3
+Moving disc 1 from 3 to 2 with help of 1
+Moving disc 3 from 1 to 3 with help of 2
+Moving disc 1 from 2 to 1 with help of 3
+Moving disc 2 from 2 to 3 with help of 1
+Moving disc 1 from 1 to 3 with help of 2
+7
+*/
