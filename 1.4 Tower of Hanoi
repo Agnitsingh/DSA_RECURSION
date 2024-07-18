@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+void toh(int n, int src, int dest, int help, int &count)
+{
+  count = count+1;
+  // Base Case
+  if(n==1)
+  {
+    cout<<"Moving disc "<<n<<" from "<<src<<" to "<<dest<<" with help of "<<help<<endl;
+    return;
+  }
+
+  toh(n-1, src,help,dest, count);
+  cout<<"Moving disc "<<n<<" from "<<src<<" to "<<dest<<" with help of "<<help<<endl;
+  toh(n-1, help,dest,src, count);
+  //cout<<"Moving disc "<<n<<" from "<<help<<" to "<<dest<<" with help of "<<src<<endl;
+  return;
+}
+
+int main() {
+  int n = 3;
+  int src = 1;
+  int dest = 3;
+  int help = 2;
+  int count = 0;
+
+  toh(n, src,dest,help, count);
+  cout<<endl<<count;
+  return 0;
+}
